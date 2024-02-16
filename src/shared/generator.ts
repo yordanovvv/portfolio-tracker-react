@@ -8,7 +8,7 @@ function generateRandomDate(from: Date, to: Date): Date {
 }
 
 function getRandomTypeOfInvestment(): string {
-  //get random index for 6 values of the InvestmentType enum
+  //get random index for 6 possible values for type of investment
   const min = 0;
   const max = 5;
   const index = Math.floor(Math.random() * (max - min + 1)) + min;

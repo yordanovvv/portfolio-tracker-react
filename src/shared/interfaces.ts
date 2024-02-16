@@ -17,3 +17,8 @@ export interface User {
   LastName: string;
   Age: number;
 }
+
+export interface Sidebar {
+  isCollapsed: boolean;
+  toggleIsCollapsed: () => void;
+}

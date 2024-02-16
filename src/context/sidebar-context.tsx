@@ -1,9 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import { Sidebar } from "../shared/interfaces";
 
-const SideBarContext = createContext<{
-  isCollapsed: boolean;
-  toggleIsCollapsed: () => void;
-}>({
+const SideBarContext = createContext<Sidebar>({
   isCollapsed: false,
   toggleIsCollapsed: () => {},
 });
