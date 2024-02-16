@@ -1,24 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Home from "./components/Home/home";
+import Investments from "./components/Investments/investments";
+import Settings from "./components/Settings/settings";
+import { useTheme } from "./context/theme-context";
 
 function App() {
+  const { theme } = useTheme();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={theme === "dark" ? "dark" : ""}>
+      <Routes>
+        <Route
+          path="/"
+          element={<Home />}
+        />{" "}
+        <Route
+          path="/investments"
+          element={<Investments />}
+        />
+        <Route
+          path="/settings"
+          element={<Settings />}
+        />
+      </Routes>
     </div>
   );
 }
